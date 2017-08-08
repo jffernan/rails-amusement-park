@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Page</h1>
+
+<% if @user.admin %>
+  <h3>ADMIN</h3>
+<% end %>
+
+Name: <%= @user.name %><br>
+Mood: <%= @user.mood %><br>
+Tickets: <%= @user.tickets %><br>
+Height: <%= @user.height %>
+
+<div>
+  <a href="/logout">Log Out</a>
+</div>

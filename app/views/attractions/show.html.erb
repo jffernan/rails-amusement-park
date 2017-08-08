@@ -1,0 +1,18 @@
+<h3><%= @attraction.name %></h3>
+
+<p>
+  <b>Name:</b> <%= @attraction.name %><br />
+  <b>Ticket Requirements:</b> <%= @attraction.tickets %><br />
+  <b>Height Requirement:</b> <%= @attraction.min_height %><br />
+  <b>Nausea Rating:</b> <%= @attraction.nausea_rating %><br />
+  <b>Happiness Rating:</b> <%= @attraction.happiness_rating %><br />
+
+  <%= form_tag rides_path do %>
+    <input type="hidden" name="attraction_id" value="<%= @attraction.id %>">
+    <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+    <input type="submit" value="Go on this ride">
+  <% end %><br />
+
+  <%= if current_user.admin then link_to("Edit Attraction", edit_attraction_path) end %>
+
+</p>
